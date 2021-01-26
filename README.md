@@ -1,5 +1,2 @@
 # GameProgramming
- Practice_GameProgramming_DirectX
-
- 겨울방학 자습임
- 
+게임 프로그래밍 자습
