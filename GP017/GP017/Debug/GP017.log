@@ -1,0 +1,4 @@
+﻿  GP017.cpp
+F:\학교\Project\GameProgramming\GameProgramming\GP017\GP017\GP017.cpp(11,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+F:\학교\Project\GameProgramming\GameProgramming\GP017\GP017\GP017.cpp(24,23): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  GP017.vcxproj -> F:\학교\Project\GameProgramming\GameProgramming\GP017\Debug\GP017.exe
