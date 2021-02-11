@@ -282,8 +282,8 @@ HRESULT DemoApp::OnRender()
 		//Clear 함수 : 창을 클리어하는 함수
 
 		// 그리기 함수를 호출하는 부분
-
 		D2D1_SIZE_F rtSize = m_pRenderTarget->GetSize();
+		//GetSize() 함수 : 그리기 영역의 크기를 얻는 함수
 
 		int width = static_cast<int>(rtSize.width);
 		int height = static_cast<int>(rtSize.height);
@@ -304,7 +304,17 @@ HRESULT DemoApp::OnRender()
 		m_pRenderTarget->FillRectangle(&rectangle1, m_pLightSlateGrayBrush);
 		m_pRenderTarget->FillRectangle(&rectangle2, m_pLightSlateGrayBrush);
 
-		hr = m_pRenderTarget->EndDraw();
+		hr = m_pRenderTarget->EndDraw(); //그리기를 끝내는 함수
+		/*
+			EndDraw 함수의 리턴 값이 D2DERR_RECREATE_TARGET인 경우 렌더 타겟이 무효화 된 것을 의미
+			- 디스플레이 해상도가 변경되거나 디스플레이 어댑터의 기능이 중지되는 등의 경우 무효화 된다
+			- 무효화 된 경우 렌더 타겟과 그 외의 모든 장치 의존적 자원들을 다시 생성해야 한다
+			- DiscardDeviceResources 함수를 호출해 장치 의존적 자원을 반납
+			- 이후 CreateDeviceResources 함수가 수행되어 렌더 타겟이 유효하지 않으므로 장치 의존적 자원들을 생성하게 된다.
+
+			EndDraw 함수의 리턴 값이 S_OK인 경우 정상적으로 그리기가 수행된 것
+		*/
+		
 	}
 
 	if (hr == D2DERR_RECREATE_TARGET)
@@ -315,10 +325,13 @@ HRESULT DemoApp::OnRender()
 	return hr;
 }
 
+//창의 크기가 수정된 경우 렌더 타겟을 크기에 맞춰 수정하는 함수
 void DemoApp::OnResize(UINT width, UINT height)
 {
 	if (m_pRenderTarget)
 	{
 		m_pRenderTarget->Resize(D2D1::SizeU(width, height));
+		//Resize() 함수가 실패할 경우 예외 처리를 할 필요 없다
+		//실패하는 경우 다음 EndDraw 호출에서 실패해 관련 자원들을 재생성하기 때문
 	}
 }
