@@ -1,0 +1,8 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(491,5): warning MSB8028: 중간 디렉터리(Debug\)에 다른 프로젝트(HW3_TEST3.vcxproj)에서 공유하는 파일이 포함되어 있습니다.  이로 인해 잘못된 정리 및 다시 빌드 동작이 수행될 수 있습니다.
+  DemoApp.cpp
+F:\학교\2021-1학기\HW3_201601607(이명진)_프로젝트파일\DemoApp.cpp(721,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\학교\2021-1학기\HW3_201601607(이명진)_프로젝트파일\DemoApp.cpp(729,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+F:\학교\2021-1학기\HW3_201601607(이명진)_프로젝트파일\DemoApp.cpp(736,15): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  IMG_handle.cpp
+  코드를 생성하고 있습니다...
+  HW3_TEST3.vcxproj -> F:\학교\2021-1학기\HW3_201601607(이명진)_프로젝트파일\Debug\HW3.exe
